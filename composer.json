@@ -1,0 +1,36 @@
+{
+    "name": "fabiopaiva/pdo-simple-migration",
+    "description": "Database version control using PDO connection",
+    "type": "library",
+    "require": {
+        "php": ">=5.4",
+        "ext-PDO": "*",
+        "symfony/console": "3.*",
+        "zendframework/zend-code": "2.*"
+    },
+    "license": "MIT",
+    "authors": [{
+        "name": "Fábio Paiva",
+        "email": "fabio@paiva.info"
+    }],
+    "minimum-stability": "dev",
+    "keywords": [
+        "db",
+        "pdo",
+        "mysql",
+        "postgreSQL",
+        "versioning",
+        "migration"
+    ],
+    "autoload": {
+        "psr-4": {
+            "PDOSimpleMigration\\": "src/"
+        }
+    },
+    "require-dev" : {
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "bin": [
+        "scripts/migration"
+    ]
+}

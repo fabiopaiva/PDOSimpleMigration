@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+/**
+ * PDOSimpleMigration
+ * @category  PHP
+ * @package   PDOSimpleMigration
+ * @author    Fábio Paiva <fabio@paiva.info>
+ * @license   MIT
+ * @link      http://github.com/fabiopaiva/PDOSimpleMigration
+ */
+
+$loader = require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use PDOSimpleMigration\Command\MigrationStatusCommand;
+use PDOSimpleMigration\Command\MigrationGenerateCommand;
+use PDOSimpleMigration\Command\MigrationMigrateCommand;
+use PDOSimpleMigration\Command\MigrationExecuteCommand;
+
+$application = new Application();
+$application->add(new MigrationStatusCommand());
+$application->add(new MigrationGenerateCommand());
+$application->add(new MigrationMigrateCommand());
+$application->add(new MigrationExecuteCommand());
+$application->run();
