@@ -43,7 +43,9 @@ class MigrationExecuteCommand extends AbstractCommand
         $version = $input->getArgument('version');
         $migrationClass = $this->loadMigrationClass($version);
         if ($migrationClass instanceof AbstractMigration) {
-            if ((!$input->getOption('up') && !$input->getOption('down')) || ($input->getOption('up') && $input->getOption('down')))  {
+            if ((!$input->getOption('up') && !$input->getOption('down'))
+                || ($input->getOption('up') && $input->getOption('down'))
+            ) {
                 throw new Exception('Need argument --up or --down');
             }
             if ($input->getOption('up')) {
@@ -67,7 +69,7 @@ class MigrationExecuteCommand extends AbstractCommand
             $queries = $migrationClass->getSql();
             $dump = $input->getOption('dump');
 
-            if(!$dump) {
+            if (!$dump) {
                 $output->writeln('Executing <info>' . $version . '</info>');
             }
 
@@ -90,7 +92,7 @@ class MigrationExecuteCommand extends AbstractCommand
             $queries = $migrationClass->getSql();
             $dump = $input->getOption('dump');
 
-            if(!$dump) {
+            if (!$dump) {
                 $output->writeln('Executing <info>' . $version . ' --down</info>');
             }
 

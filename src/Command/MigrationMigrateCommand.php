@@ -27,10 +27,14 @@ class MigrationMigrateCommand extends AbstractCommand
 
         $diff = array_diff($availables, $executeds);
 
-        foreach($diff as $version) {
+        foreach ($diff as $version) {
             $executor = new MigrationExecuteCommand();
             $executor->executeUp($version, $input, $output);
-            $stmt = $this->pdo->prepare('INSERT INTO ' . $this->tableName . ' SET version = :version, description = :description');
+            $stmt = $this->pdo->prepare(
+                'INSERT INTO '
+                . $this->tableName
+                . ' SET version = :version, description = :description'
+            );
             $stmt->bindParam('version', $version);
             $stmt->bindParam('description', $this->loadMigrationClass($version)::$description);
             $stmt->execute();
