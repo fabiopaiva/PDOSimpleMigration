@@ -6,6 +6,8 @@ Simple migration is a minimallist tool to manage your database versioning.
 
     composer require fabiopaiva/pdo-simple-migration
 
+![Installation](https://github.com/fabiopaiva/PDOSimpleMigration/blob/master/docs/install.png)
+
 ## Configuration
 
 This library try to find a file called config.php in working directory with PDO setup,
@@ -17,7 +19,7 @@ if file don't exists, you can send PDO parameters in command line.
 <?php
     return [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=myDb;port=3306;charset=UTF-8',
+            'dsn' => 'mysql:host=localhost;dbname=myDb;port=3306;charset=UTF8',
             'username' => 'root',
             'password' => 'pass',
         ],
@@ -39,11 +41,15 @@ List current status of your migrations
 
     vendor/bin/migration status
 
+![Status](https://github.com/fabiopaiva/PDOSimpleMigration/blob/master/docs/status.png)
+
 ### Generate
 
 Generate a empty migration
 
     vendor/bin/migration generate
+
+![Generate](https://github.com/fabiopaiva/PDOSimpleMigration/blob/master/docs/generate.png)
 
 #### Generated code example
 
@@ -76,11 +82,15 @@ Migrate to latest version
 
     vendor/bin/migration migrate
 
+![Migrate](https://github.com/fabiopaiva/PDOSimpleMigration/blob/master/docs/migrate.png)
+
 ### Execute
 
 Execute specific migration version (up or down)
 
     vendor/bin/migration execute version --up --down
+
+![Execute](https://github.com/fabiopaiva/PDOSimpleMigration/blob/master/docs/execute.png)
 
 ## Options
 
