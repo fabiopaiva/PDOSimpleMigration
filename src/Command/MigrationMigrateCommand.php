@@ -35,8 +35,9 @@ class MigrationMigrateCommand extends AbstractCommand
                 . $this->tableName
                 . ' SET version = :version, description = :description'
             );
+            $migrationClass = $this->loadMigrationClass($version);
             $stmt->bindParam('version', $version);
-            $stmt->bindParam('description', $this->loadMigrationClass($version)::$description);
+            $stmt->bindParam('description', $migrationClass::$description);
             $stmt->execute();
         }
 
