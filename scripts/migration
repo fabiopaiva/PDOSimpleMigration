@@ -9,7 +9,7 @@
  * @link      http://github.com/fabiopaiva/PDOSimpleMigration
  */
 
-$loader = require __DIR__ . '/../vendor/autoload.php';
+$loader = require getcwd() . '/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 use PDOSimpleMigration\Command\MigrationStatusCommand;
