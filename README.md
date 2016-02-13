@@ -1,6 +1,6 @@
 # PDO Simple Migration
 
-Simple migration is a minimallist tool to manage your database versioning.
+Simple migration is a minimalist tool to manage your database versioning.
 
 ## Installation
 
@@ -10,8 +10,8 @@ Simple migration is a minimallist tool to manage your database versioning.
 
 ## Configuration
 
-This library try to find a file called config.php in working directory with PDO setup,
-if file don't exists, you can send PDO parameters in command line.
+This library tries to find a file called config.php in working directory with PDO setup,
+if file doesn't exist, you can send PDO parameters in command line.
 
 ### config.php (optional)
 
